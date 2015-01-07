@@ -1,25 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jiT-PX-ehb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="Xhn-jy-jGt">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="jiT-PX-ehb" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="amA-Ti-oil"/>
+                        <viewControllerLayoutGuide type="bottom" id="teE-D6-UnF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="mOU-kt-ty2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNm-iD-GHA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QnN-zU-60S">
+                                <rect key="frame" x="150" y="274" width="37" height="37"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Doe-2U-AcS">
+                                <rect key="frame" x="10" y="43" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jiT-PX-ehb" id="Ev6-BR-pfW"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zNm-iD-GHA" firstAttribute="top" secondItem="mOU-kt-ty2" secondAttribute="topMargin" id="2Y4-F4-g4C"/>
+                            <constraint firstAttribute="centerY" secondItem="QnN-zU-60S" secondAttribute="centerY" id="72g-TD-1lc"/>
+                            <constraint firstAttribute="centerX" secondItem="QnN-zU-60S" secondAttribute="centerX" id="7c0-gu-Zq7"/>
+                            <constraint firstItem="Doe-2U-AcS" firstAttribute="leading" secondItem="mOU-kt-ty2" secondAttribute="leadingMargin" constant="-6" id="9JX-pG-cH6"/>
+                            <constraint firstItem="zNm-iD-GHA" firstAttribute="leading" secondItem="mOU-kt-ty2" secondAttribute="leadingMargin" constant="-16" id="J4G-dB-7lU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zNm-iD-GHA" secondAttribute="trailing" constant="-16" id="hZr-t5-2O9"/>
+                            <constraint firstItem="Doe-2U-AcS" firstAttribute="top" secondItem="amA-Ti-oil" secondAttribute="bottom" constant="40" id="mwY-1p-LOr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Doe-2U-AcS" secondAttribute="trailing" constant="-6" id="t4m-mP-rmI"/>
+                            <constraint firstAttribute="centerX" secondItem="Doe-2U-AcS" secondAttribute="centerX" id="wXn-xt-KFA"/>
+                            <constraint firstItem="teE-D6-UnF" firstAttribute="top" secondItem="zNm-iD-GHA" secondAttribute="bottom" id="zrI-83-Ot7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="urlAddressTextField" destination="Doe-2U-AcS" id="yWm-l0-OiB"/>
+                        <outlet property="webView" destination="zNm-iD-GHA" id="Kit-D8-dfM"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2T0-4b-XEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="592" y="310"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
